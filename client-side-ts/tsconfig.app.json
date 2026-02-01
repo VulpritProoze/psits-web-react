@@ -31,6 +31,15 @@
     "paths": {
       "@/*": [
         "./src/*"
+      ],
+      "@student-web/*": [
+        "./src/student-web/*"
+      ],
+      "@admin-web/*": [
+        "./src/admin-web/*"
+      ],
+      "@shared/*": [
+        "./src/shared/*"
       ]
     }
   },

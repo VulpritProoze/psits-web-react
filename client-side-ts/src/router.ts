@@ -1,26 +1,26 @@
 import { createBrowserRouter, Outlet } from "react-router";
-import { MainLayout } from "./layouts/MainLayout";
-import { AdminLayout } from "./layouts/AdminLayout";
-import { Home } from "./pages/home";
-import { Events } from "./pages/events";
-import { Organizations } from "./pages/organizations";
-import { Resources } from "./pages/home/sections/Resources";
-import { Shop } from "./pages/orders/components/Shop";
-import { ProductDetailsPage } from "./pages/orders/components/ProductDetails";
-import { Cart } from "./pages/orders/components/Cart";
-import OTPCode from "./pages/auth/OtpCode";
-import { PrivacyPolicy } from "./pages/PrivacyPolicy";
-import { TermsOfCondition } from "./pages/TermsOfCondition";
-import { Dashboard } from "./features/admin/Dashboard";
-import { ErrorPage } from "./pages/ErrorPage";
-import Login from "./pages/auth/Login";
-import Signup from "./pages/auth/SignUp";
-import ForgotPassword from "./pages/auth/ForgotPassword";
-import SetNewPassword from "./pages/auth/SetNewPassword";
-import AccountSettings from "./features/student/components/AccountSettings";
-import EventAttendance from "./features/student/components/EventAttendance";
-import MyOrders from "./features/student/components/MyOrders";
-import StudentLayout from "./layouts/StudentLayout";
+import { MainLayout } from "./shared/layouts/MainLayout";
+// import { AdminLayout } from "./shared/layouts/AdminLayout";
+import { Home } from "@student-web/pages/home";
+import { Events } from "@student-web/pages/events";
+import { Organizations } from "@student-web/pages/organizations";
+import { Resources } from "@student-web/pages/home/sections/Resources";
+import { Shop } from "@student-web/pages/orders/components/Shop";
+import { ProductDetailsPage } from "@student-web/pages/orders/components/ProductDetails";
+import { Cart } from "@student-web/pages/orders/components/Cart";
+import OTPCode from "@student-web/pages/auth/OtpCode";
+import { PrivacyPolicy } from "@student-web/pages/PrivacyPolicy";
+import { TermsOfCondition } from "@student-web/pages/TermsOfCondition";
+// import { Dashboard } from "./features/admin/Dashboard";
+import { ErrorPage } from "@student-web/pages/ErrorPage";
+import Login from "@student-web/pages/auth/Login";
+import Signup from "@student-web/pages/auth/SignUp";
+import ForgotPassword from "@student-web/pages/auth/ForgotPassword";
+import SetNewPassword from "@student-web/pages/auth/SetNewPassword";
+// import AccountSettings from "./features/student/components/AccountSettings";
+// import EventAttendance from "./features/student/components/EventAttendance";
+// import MyOrders from "./features/student/components/MyOrders";
+// import StudentLayout from "./layouts/StudentLayout";
 
 export default createBrowserRouter([
   {
@@ -39,16 +39,16 @@ export default createBrowserRouter([
           { path: "shop", Component: Shop },
           { path: "shop/:id", Component: ProductDetailsPage },
           { path: "cart", Component: Cart },
-          {
-            path: "student",
-            Component: StudentLayout,
-            children: [
-              { index: true, Component: AccountSettings },
-              { path: "event-attendance", Component: EventAttendance },
-              { path: "my-orders", Component: MyOrders },
-              { path: "account-settings", Component: AccountSettings },
-            ],
-          },
+          // {
+          //   path: "student",
+          //   Component: StudentLayout,
+          //   children: [
+          //     { index: true, Component: AccountSettings },
+          //     { path: "event-attendance", Component: EventAttendance },
+          //     { path: "my-orders", Component: MyOrders },
+          //     { path: "account-settings", Component: AccountSettings },
+          //   ],
+          // },
 
         ],
       },
@@ -67,18 +67,18 @@ export default createBrowserRouter([
         ],
       },
       // Admin Routes
-      {
-        path: "admin",
-        Component: AdminLayout,
-        children: [{ index: true, Component: Dashboard }],
-      },
+      // {
+      //   path: "admin",
+      //   Component: AdminLayout,
+      //   children: [{ index: true, Component: Dashboard }],
+      // },
       
       // Admin Routes
-      {
-        path: "admin",
-        Component: AdminLayout,
-        children: [{ index: true, Component: Dashboard }],
-      },
+      // {
+      //   path: "admin",
+      //   Component: AdminLayout,
+      //   children: [{ index: true, Component: Dashboard }],
+      // },
     ],
   },
 ]);
