@@ -5,7 +5,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@student-web/components/ui/card";
+} from "@shared/components/ui/card";
 
 
 import { motion } from "framer-motion";

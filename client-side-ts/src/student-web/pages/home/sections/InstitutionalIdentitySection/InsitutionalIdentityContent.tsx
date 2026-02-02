@@ -1,6 +1,6 @@
 import { Check } from "lucide-react";
-import { CardHeader, CardTitle, CardDescription } from "@student-web/components/ui/card";
-import { cn } from "@student-web/lib/utils";
+import { CardHeader, CardTitle, CardDescription } from "@/shared/components/ui/card";
+import { cn } from "@/shared/lib/utils";
 
 interface Vision {
   intro: string;

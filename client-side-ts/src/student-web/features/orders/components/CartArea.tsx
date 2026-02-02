@@ -1,13 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Spinner } from '@/student-web/components/ui/spinner';
-import { Checkbox } from '@/student-web/components/ui/checkbox';
-import { Button } from '@/student-web/components/ui/button';
-import { Avatar, AvatarImage } from '@/student-web/components/ui/avatar';
-import { Card } from '@/student-web/components/ui/card';
+import { Spinner } from '@/shared/components/ui/spinner';
+import { Checkbox } from '@/shared/components/ui/checkbox';
+import { Button } from '@/shared/components/ui/button';
+import { Avatar, AvatarImage } from '@/shared/components/ui/avatar';
+import { Card } from '@/shared/components/ui/card';
 import { Minus, Plus, Trash } from 'lucide-react';
-import { useCart } from '@/student-web/lib/cart';
-import { useTransactions } from '@/student-web/lib/transactions';
+import { useCart } from '@/student-web/context/cart-context';
+import { useTransactions } from '@/student-web/context/transactions-context';
 import { toast } from 'sonner';
 import { makeOrder } from '../api/orders';
 

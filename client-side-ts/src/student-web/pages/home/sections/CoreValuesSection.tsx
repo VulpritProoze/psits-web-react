@@ -4,7 +4,7 @@ import {
   CardHeader,
   CardTitle,
   CardDescription,
-} from "@/student-web/components/ui/card";
+} from "@/shared/components/ui/card";
 
 import { coreValuesData } from "@/student-web/data/sections-data";
 

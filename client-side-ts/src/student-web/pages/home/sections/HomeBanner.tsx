@@ -1,10 +1,10 @@
-import { Button } from "@/student-web/components/ui/button";
+import { Button } from "@/shared/components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardTitle,
-} from "@/student-web/components/ui/card";
+} from "@/shared/components/ui/card";
 import banner from "@student-web/assets/banner.png";
 import { homeBannerData } from "@/student-web/data/sections-data";
 import { OptimizedImage } from "@/student-web/components/common/OptimizedImage";

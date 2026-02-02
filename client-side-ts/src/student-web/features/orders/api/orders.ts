@@ -1,7 +1,7 @@
-import backendConnection from "@/student-web/api/backendApi";
+import backendConnection from "@/shared/api/api";
 import axios from "axios";
 import type { AxiosError, AxiosResponse } from "axios";
-import { showToast } from "@/student-web/utils/alertHelper";
+import { showToast } from "@/shared/utils/alert-helper";
 
 interface CartItem {
   product_id?: string;

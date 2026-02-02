@@ -1,5 +1,5 @@
-import { Card, CardDescription, CardTitle } from "@/student-web/components/ui/card";
-import { cn } from "@/student-web/lib/utils";
+import { Card, CardDescription, CardTitle } from "@/shared/components/ui/card";
+import { cn } from "@/shared/lib/utils";
 import type { LucideIcon } from "lucide-react";
 import announcement from "@student-web/assets/announcement.png";
 

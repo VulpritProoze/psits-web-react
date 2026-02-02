@@ -7,15 +7,15 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/student-web/components/ui/card";
+} from "@/shared/components/ui/card";
 import {
   Field,
   FieldError,
   FieldGroup,
   FieldLabel,
-} from "@/student-web/components/ui/field";
-import { Input } from "@/student-web/components/ui/input";
-import { Button } from "@/student-web/components/ui/button";
+} from "@/shared/components/ui/field";
+import { Input } from "@/shared/components/ui/input";
+import { Button } from "@/shared/components/ui/button";
 import { Link } from "react-router";
 
 const formSchema = z.object({

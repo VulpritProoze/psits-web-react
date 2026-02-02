@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence, type HTMLMotionProps } from "framer-motion";
-import { cn } from "@/student-web/lib/utils";
+import { cn } from "@/shared/lib/utils";
 
 interface OptimizedImageProps extends Omit<
   HTMLMotionProps<"img">,

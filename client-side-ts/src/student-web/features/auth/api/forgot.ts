@@ -1,6 +1,6 @@
-import backendConnection from "@/student-web/api/backendApi";
+import backendConnection from "@/shared/api/api";
 import axios, { AxiosError } from "axios";
-import { showToast } from "@/student-web/utils/alertHelper";
+import { showToast } from "@/shared/utils/alert-helper";
 
 interface ApiErrorResponse {
   message?: string;

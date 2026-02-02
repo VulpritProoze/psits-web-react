@@ -3,7 +3,7 @@ import imageLogo from "@student-web/assets/ccsidentity.png";
 import aiLab from "@student-web/assets/aiLab.jpg";
 import announcement from "@student-web/assets/announcement.png";
 import { InsitutionalIdentityContent } from "./InsitutionalIdentityContent";
-import { Card } from "@student-web/components/ui/card";
+import { Card } from "@/shared/components/ui/card";
 import { OptimizedImage } from "@student-web/components/common/OptimizedImage";
 import { motion } from "framer-motion";
 

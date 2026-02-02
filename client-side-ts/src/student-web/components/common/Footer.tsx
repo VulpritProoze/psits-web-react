@@ -1,11 +1,11 @@
 import { Link } from "react-router";
-import { CardDescription, CardTitle } from "../ui/card";
-import { Button } from "../ui/button";
-import { Input } from "../ui/input";
+import { CardDescription, CardTitle } from "../../../shared/components/ui/card";
+import { Button } from "../../../shared/components/ui/button";
+import { Input } from "../../../shared/components/ui/input";
 import logo from "@/student-web/assets/logo.png";
 import { ArrowRight, Facebook, Github, Mail, MapPin } from "lucide-react";
 import { FaDiscord } from "react-icons/fa";
-import { cn } from "@/student-web/lib/utils";
+import { cn } from "@/shared/lib/utils";
 import { BackgroundText } from "./BackgroundText";
 
 interface FooterLinkProps {

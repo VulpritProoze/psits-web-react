@@ -1,5 +1,5 @@
-import { Card, CardDescription } from "../ui/card";
-import { cn } from "@/student-web/lib/utils";
+import { Card, CardDescription } from "../../../shared/components/ui/card";
+import { cn } from "@/shared/lib/utils";
 
 interface BackgroundTextProps {
   text: string;

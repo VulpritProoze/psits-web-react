@@ -7,9 +7,9 @@ import { getMerchandiseById, type MerchandiseItem } from '../api/orders';
 // Fallback image for products without images
 import fallbackImage from '@/student-web/assets/awarding/1.jpg';
 
-import { Button } from '@/student-web/components/ui/button';
-import { cn } from '@/student-web/lib/utils';
-import { useCart } from '@/student-web/lib/cart';
+import { Button } from '@/shared/components/ui/button';
+import { cn } from '@/shared/lib/utils';
+import { useCart } from '@/student-web/context/cart-context';
 import { addToCartApi } from '@/student-web/features/student/api/student';
 
 interface Product {

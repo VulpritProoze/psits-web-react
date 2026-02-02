@@ -1,12 +1,12 @@
-import { CardTitle } from "@student-web/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@student-web/components/ui/tabs";
+import { CardTitle } from "@/shared/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/shared/components/ui/tabs";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@student-web/components/ui/carousel";
+} from "@shared/components/ui/carousel";
 import { OptimizedImage } from "@student-web/components/common/OptimizedImage";
 import { organizationSectionData, type Member } from "@student-web/data/sections-data";
 

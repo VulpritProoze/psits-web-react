@@ -1,9 +1,9 @@
 import { Outlet } from "react-router";
 import { Header } from "@/student-web/components/common/Header";
 import { Footer } from "@/student-web/components/common/Footer";
-import CartProvider from "@/student-web/lib/cart";
-import TransactionsProvider from "@/student-web/lib/transactions";
-import { Toaster } from '@/student-web/components/ui/sonner';
+import CartProvider from "@/student-web/context/cart-context";
+import TransactionsProvider from "@/student-web/context/transactions-context";
+import { Toaster } from '@/shared/components/ui/sonner';
 
 export const MainLayout = () => {
   return (

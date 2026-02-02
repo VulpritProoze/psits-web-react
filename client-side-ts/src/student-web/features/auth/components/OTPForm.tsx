@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Button } from "@/student-web/components/ui/button";
+import { Button } from "@/shared/components/ui/button";
 import {
   Card,
   CardContent,
@@ -7,13 +7,13 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/student-web/components/ui/card";
-import { Field } from "@/student-web/components/ui/field";
+} from "@/shared/components/ui/card";
+import { Field } from "@/shared/components/ui/field";
 import {
   InputOTP,
   InputOTPGroup,
   InputOTPSlot,
-} from "@/student-web/components/ui/input-otp";
+} from "@/shared/components/ui/input-otp";
 
 export interface OTPFormProps {
   onVerify: (value: string) => void;

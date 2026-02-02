@@ -16,11 +16,11 @@ import {
   InputGroupAddon,
   InputGroupButton,
   InputGroupInput,
-} from '@/student-web/components/ui/input-group';
-import { Badge } from '@/student-web/components/ui/badge';
-import { buttonVariants } from '@/student-web/components/ui/button';
-import { cn } from '@/student-web/lib/utils';
-import { OptimizedImage } from '@/student-web/components/common/OptimizedImage';
+} from '@/shared/components/ui/input-group';
+import { Badge } from '@/shared/components/ui/badge';
+import { buttonVariants } from '@/shared/components/ui/button';
+import { cn } from '@/shared/lib/utils';
+import { OptimizedImage } from '@student-web/components/common/OptimizedImage';
 import { getPublishedMerchandise, type MerchandiseItem } from '../api/orders';
 
 // Fallback image for products without images

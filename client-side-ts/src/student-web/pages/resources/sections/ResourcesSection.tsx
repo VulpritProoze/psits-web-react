@@ -2,11 +2,11 @@ import React, { useState, useEffect, useCallback, type ChangeEvent } from 'react
 import { tutorials } from '@student-web/data/sections-data';
 // import { Input } from '@student-web/components/ui/input';
 // import { InputGroup, InputGroupAddon, InputGroupButton, InputGroupInput } from '@student-web/components/ui/input-group';
-import { Badge } from '@student-web/components/ui/badge';
+import { Badge } from '@shared/components/ui/badge';
 import { OptimizedImage } from '@student-web/components/common/OptimizedImage';
-import { Card, CardContent, CardFooter, CardTitle, CardDescription } from '@student-web/components/ui/card';
-import { buttonVariants } from '@student-web/components/ui/button';
-import { cn } from '@student-web/lib/utils';
+import { Card, CardContent, CardFooter, CardTitle, CardDescription } from '@shared/components/ui/card';
+import { buttonVariants } from '@shared/components/ui/button';
+import { cn } from '@shared/lib/utils';
 
 type Resource = {
   id: number;

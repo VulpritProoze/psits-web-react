@@ -9,7 +9,7 @@ import {
   Mail,
   ChevronLeft,
 } from "lucide-react";
-import { Button } from "@/student-web/components/ui/button";
+import { Button } from "@/shared/components/ui/button";
 
 export const TermsOfCondition = () => {
   const lastUpdated = "December 23, 2024";

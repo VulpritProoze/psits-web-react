@@ -1,7 +1,7 @@
 import axios from "axios";
 import type { AxiosError, AxiosResponse } from "axios";
-import backendConnection from "@/student-web/api/backendApi";
-import { showToast } from "@/student-web/utils/alertHelper";
+import backendConnection from "@/shared/api/api";
+import { showToast } from "@/shared/utils/alert-helper";
 
 // Types
 interface DocEndpointParams {

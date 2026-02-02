@@ -1,4 +1,4 @@
-import { cn } from "@/student-web/lib/utils";
+import { cn } from "@/shared/lib/utils";
 import { useRef, useEffect, useState, useCallback } from "react";
 import { OptimizedImage } from "@student-web/components/common/OptimizedImage";
 import Avatar1 from "@student-web/assets/Core Officers 2025/1.png";

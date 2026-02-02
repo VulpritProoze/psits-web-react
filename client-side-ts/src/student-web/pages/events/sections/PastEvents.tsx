@@ -1,5 +1,5 @@
 import { MapPin, ChevronDown } from "lucide-react";
-import { Button } from "@/student-web/components/ui/button";
+import { Button } from "@/shared/components/ui/button";
 import { pastEventsData } from "@/student-web/data/sections-data";
 import { OptimizedImage } from "@/student-web/components/common/OptimizedImage";
 

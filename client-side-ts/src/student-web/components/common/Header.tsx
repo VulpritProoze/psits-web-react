@@ -7,9 +7,9 @@ import {
   useScroll,
   useMotionValueEvent,
 } from "framer-motion";
-import { cn } from "@/student-web/lib/utils";
+import { cn } from "@/shared/lib/utils";
 import logo from "@student-web/assets/logo.png";
-import { Button } from "@/student-web/components/ui/button";
+import { Button } from "@/shared/components/ui/button";
 
 const navLinks = [
   { name: "Home", href: "/" },

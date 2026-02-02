@@ -1,9 +1,9 @@
-import { Card, CardContent } from "@/student-web/components/ui/card";
+import { Card, CardContent } from "@/shared/components/ui/card";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-} from "@/student-web/components/ui/carousel";
+} from "@/shared/components/ui/carousel";
 import { Calendar, MapPin } from "lucide-react";
 import { upcomingEventsData } from "@/student-web/data/sections-data";
 import { OptimizedImage } from "@/student-web/components/common/OptimizedImage";
