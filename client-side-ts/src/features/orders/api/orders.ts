@@ -1,7 +1,7 @@
-import backendConnection from "../../../api/backendApi";
 import axios from "axios";
 import type { AxiosError, AxiosResponse } from "axios";
-import { showToast } from "../../../utils/alertHelper";
+import { showToast } from "@/utils/alertHelper";
+import api from "@/api/axios";
 
 interface CartItem {
   product_id?: string;
@@ -22,13 +22,13 @@ interface CartItem {
 // Merchandise/Product interfaces
 export interface MerchandiseItem {
   _id: string;
-  name: string; 
-  product_name?: string; 
+  name: string;
+  product_name?: string;
   price: number;
   stocks?: number;
   stock?: number;
-  imageUrl?: string[]; 
-  imageUrl1?: string; 
+  imageUrl?: string[];
+  imageUrl1?: string;
   imageUrl2?: string;
   description?: string;
   category?: string;
@@ -89,21 +89,21 @@ interface ErrorResponse {
   message?: string;
 }
 
-const getAuthToken = (): string | null => {
-  return sessionStorage.getItem("Token");
-};
+// const getAuthToken = (): string | null => {
+//   return sessionStorage.getItem("Token");
+// };
 
-const createHeaders = () => ({
-  "Content-Type": "application/json",
-  Authorization: `Bearer ${getAuthToken()}`,
-});
+// const createHeaders = () => ({
+//   "Content-Type": "application/json",
+//   Authorization: `Bearer ${getAuthToken()}`,
+// });
 
 // Helper to handle API errors
 const handleApiError = (error: unknown, showUserError = true): void => {
   if (axios.isAxiosError(error)) {
     const axiosError = error as AxiosError<ErrorResponse>;
     const errorMessage = axiosError.response?.data?.message || "An error occurred";
-    
+
     if (showUserError) {
       showToast("error", errorMessage);
     }
@@ -118,10 +118,9 @@ const handleApiError = (error: unknown, showUserError = true): void => {
 
 export const makeOrder = async (formData: OrderFormData): Promise<boolean> => {
   try {
-    const response: AxiosResponse = await axios.post(
-      `${backendConnection()}/api/orders/student-order`,
+    const response: AxiosResponse = await api.post(
+      `/api/orders/student-order`,
       formData,
-      { headers: createHeaders() }
     );
 
     return response.status === 200;
@@ -133,11 +132,10 @@ export const makeOrder = async (formData: OrderFormData): Promise<boolean> => {
 
 export const getOrder = async (id_number: string): Promise<OrderResponse | null> => {
   try {
-    const response: AxiosResponse<OrderResponse> = await axios.get(
-      `${backendConnection()}/api/orders`,
+    const response: AxiosResponse<OrderResponse> = await api.get(
+      `/api/orders`,
       {
         params: { id_number },
-        headers: createHeaders(),
       }
     );
 
@@ -150,9 +148,8 @@ export const getOrder = async (id_number: string): Promise<OrderResponse | null>
 
 export const getAllOrders = async (): Promise<OrderResponse[] | null> => {
   try {
-    const response: AxiosResponse<OrderResponse[]> = await axios.get(
-      `${backendConnection()}/api/orders/get-all-orders`,
-      { headers: createHeaders() }
+    const response: AxiosResponse<OrderResponse[]> = await api.get(
+      `/api/orders/get-all-orders`,
     );
 
     return response.status === 200 ? response.data : null;
@@ -164,10 +161,9 @@ export const getAllOrders = async (): Promise<OrderResponse[] | null> => {
 
 export const cancelOrder = async (product_id: string | number): Promise<boolean> => {
   try {
-    const response: AxiosResponse = await axios.put(
-      `${backendConnection()}/api/orders/cancel/${product_id}`,
-      {},
-      { headers: createHeaders() }
+    const response: AxiosResponse = await api.put(
+      `/api/orders/cancel/${product_id}`,
+      {}
     );
 
     if (response.status === 200) {
@@ -185,10 +181,9 @@ export const cancelOrder = async (product_id: string | number): Promise<boolean>
 
 export const approveOrder = async (formData: OrderFormData): Promise<boolean> => {
   try {
-    const response: AxiosResponse = await axios.put(
-      `${backendConnection()}/api/orders/approve-order`,
-      formData,
-      { headers: createHeaders() }
+    const response: AxiosResponse = await api.put(
+      `/api/orders/approve-order`,
+      formData
     );
 
     return response.status === 200;
@@ -201,9 +196,8 @@ export const approveOrder = async (formData: OrderFormData): Promise<boolean> =>
 
 export const getAllPendingOrders = async (): Promise<OrderResponse[] | null> => {
   try {
-    const response: AxiosResponse<OrderResponse[]> = await axios.get(
-      `${backendConnection()}/api/orders/get-all-pending-orders`,
-      { headers: createHeaders() }
+    const response: AxiosResponse<OrderResponse[]> = await api.get(
+      `/api/orders/get-all-pending-orders`
     );
 
     return response.status === 200 ? response.data : null;
@@ -216,9 +210,8 @@ export const getAllPendingOrders = async (): Promise<OrderResponse[] | null> => 
 
 export const getAllPaidOrders = async (): Promise<OrderResponse[] | null> => {
   try {
-    const response: AxiosResponse<OrderResponse[]> = await axios.get(
-      `${backendConnection()}/api/orders/get-all-paid-orders`,
-      { headers: createHeaders() }
+    const response: AxiosResponse<OrderResponse[]> = await api.get(
+      `/api/orders/get-all-paid-orders`
     );
 
     return response.status === 200 ? response.data : null;
@@ -230,9 +223,8 @@ export const getAllPaidOrders = async (): Promise<OrderResponse[] | null> => {
 
 export const getPublishedMerchandise = async (): Promise<MerchandiseItem[] | null> => {
   try {
-    const response: AxiosResponse<MerchandiseResponse> = await axios.get(
-      `${backendConnection()}/api/merch/retrieve-publish-merchandise`,
-      { headers: createHeaders() }
+    const response: AxiosResponse<MerchandiseResponse> = await api.get(
+      `/api/v2/merch/retrieve-publish-merchandise`
     );
 
     return response.status === 200 ? response.data.data : null;
@@ -244,9 +236,8 @@ export const getPublishedMerchandise = async (): Promise<MerchandiseItem[] | nul
 
 export const getAllMerchandise = async (): Promise<MerchandiseItem[] | null> => {
   try {
-    const response: AxiosResponse<MerchandiseResponse> = await axios.get(
-      `${backendConnection()}/api/merch/retrieve`,
-      { headers: createHeaders() }
+    const response: AxiosResponse<MerchandiseResponse> = await api.get(
+      `/api/v2/merch/retrieve`
     );
 
     return response.status === 200 ? response.data.data : null;
@@ -258,9 +249,8 @@ export const getAllMerchandise = async (): Promise<MerchandiseItem[] | null> => 
 
 export const getMerchandiseById = async (productId: string): Promise<MerchandiseItem | null> => {
   try {
-    const response: AxiosResponse<{ data: MerchandiseItem }> = await axios.get(
-      `${backendConnection()}/api/merch/retrieve/${productId}`,
-      { headers: createHeaders() }
+    const response: AxiosResponse<{ data: MerchandiseItem }> = await api.get(
+      `/api/merch/retrieve/${productId}`
     );
 
     return response.status === 200 ? response.data.data : null;

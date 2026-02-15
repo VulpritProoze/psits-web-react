@@ -21,6 +21,10 @@ import authV2Routes from "./routes/authV2.route";
 import { checkPromos } from "./custom_function/check_promo";
 import documentationRoutes from "./routes/documentation.route";
 
+// V2 Routes
+import ordersV2Routes from "./routes/V2/ordersV2.route";
+import merchV2Routes from "./routes/V2/merchandiseV2.route";
+
 //Declaration
 const app: Express = express();
 dotenv.config();
@@ -64,6 +68,10 @@ app.use("/api/promo", promoRoutes);
 app.use("/api", privateRoutes);
 app.use("/api/docs", documentationRoutes);
 app.use("/api/v2/auth", authV2Routes);
+
+// V2 routes
+app.use("/api/v2/orders", ordersV2Routes);
+app.use("/api/v2/merch", merchV2Routes);
 
 app.listen(PORT, () => {
   console.log(`Server started, listening at port ${PORT}`);

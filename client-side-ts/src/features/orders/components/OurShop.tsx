@@ -11,10 +11,10 @@ import { Badge } from '@/components/ui/badge';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { OptimizedImage } from '@/components/common/OptimizedImage';
-import { getPublishedMerchandise, type MerchandiseItem } from '../api/orders';
+import { getPublishedMerchandise, getAllMerchandise, type MerchandiseItem } from '../api/orders';
 
 // Fallback image for products without images
-import fallbackImage from '../../../assets/awarding/1.jpg';
+import fallbackImage from '@/assets/awarding/1.jpg';
 
 interface Product {
   id: string;
@@ -33,16 +33,16 @@ interface Product {
 const transformMerchandise = (item: MerchandiseItem): Product => {
   // Backend uses 'name' field, but we also check 'product_name' for compatibility
   const productName = item.name || item.product_name || 'Unknown Product';
-  
+
   // Backend uses imageUrl array, get first image
   const productImage = item.imageUrl?.[0] || item.imageUrl1 || fallbackImage;
-  
+
   // Get sizes from selectedSizes map or sizes array
   const sizes = item.sizes || (item.selectedSizes ? Object.keys(item.selectedSizes) : undefined);
-  
+
   // Get variations/colors
   const colors = item.colors || item.selectedVariations || item.variation;
-  
+
   return {
     id: item._id,
     name: productName,
@@ -73,7 +73,8 @@ export const OurShop: React.FC = () => {
       setLoading(true);
       setError(null);
       try {
-        const merchandise = await getPublishedMerchandise();
+        // const merchandise = await getPublishedMerchandise();
+        const merchandise = await getAllMerchandise();
         if (merchandise && merchandise.length > 0) {
           const transformed = merchandise.map(transformMerchandise);
           setProducts(transformed);
@@ -119,8 +120,8 @@ export const OurShop: React.FC = () => {
           Merchandise
         </span>
       </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-16 -mt-[10vh] pb-20">
-        
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-16 -mt-[10vh] pb-20">
+
         {/* Title Section */}
         <header className="pt- pb-12 text-center">
           <h2 className="text-3xl md:text-5xl font-extrabold text-gray-800 tracking-tight">
@@ -160,8 +161,8 @@ export const OurShop: React.FC = () => {
           ) : error ? (
             <div className="col-span-full text-center py-20 text-red-500">
               <p>{error}</p>
-              <button 
-                onClick={() => window.location.reload()} 
+              <button
+                onClick={() => window.location.reload()}
                 className="mt-4 px-4 py-2 bg-[#1c9dde] text-white rounded-lg hover:bg-[#1a8acb]"
               >
                 Retry
@@ -188,7 +189,7 @@ export const OurShop: React.FC = () => {
                     variant: page === i + 1 ? 'outline' : 'ghost',
                     size: 'icon',
                   }),
-                   page === i + 1 ? 'bg-[#1c9dde]  text-white border-transparent hover:bg-[#1a8acb] hover:text-white' : '',
+                  page === i + 1 ? 'bg-[#1c9dde]  text-white border-transparent hover:bg-[#1a8acb] hover:text-white' : '',
                   'w-12 h-12 rounded-2xl font-bold text-sm transition-all shadow-sm cursor-pointer'
                 )}
               >
